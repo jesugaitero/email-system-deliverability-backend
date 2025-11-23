@@ -17,7 +17,6 @@ const CustomServers = require("../models/CustomServers");
 const emailQueue = require("../models/EmailsQueue");
 const EmailSended = require("../models/emailsSended");
 //CONFIG PACKAGES
-const { v4: uuidv4 } = await import('uuid');
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const pug = require("pug");
@@ -34,7 +33,10 @@ const csv = require("fast-csv");
 const { NodeSSH } = require("node-ssh");
 
 const { hashPassword, comparePassword } = require("../utils/auth");
-
+   async function generateUuid() {
+      const { v4: uuidv4 } = await import('uuid');
+      return uuidv4();
+    }
 // const storage = multer.memoryStorage();
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -995,7 +997,7 @@ exports.deployLinodeServer = async (req, res) => {
   }
 
   try {
-    let idGen = uuidv4();
+    let idGen = await generateUuid();
     idGen = idGen.slice(0, -14);
     ////console.log(idGen);
     var data = {
@@ -1057,7 +1059,7 @@ exports.deployDigitalOceanServer = async (req, res) => {
   }
 
   try {
-    let idGen = uuidv4();
+    let idGen = await generateUuid();
     idGen = idGen.slice(0, -14);
     ////console.log(idGen);
     // var data = {
@@ -1133,7 +1135,7 @@ exports.deployBitLaunchServer = async (req, res) => {
   try {
     var dataString = `{"server":{"name":"my-awesome-server","hostID":4,"imageID":1,"hostImageID":"11000","imageType":"image","imageDescription":"CentOS 7.6","sizeID":"nibble-1024","regionID":"${req.body.country}","password":"aComplexP@ssword","initscript":"#!/bin/sh echo \'hello\' > /root/hello"}}`;
 
-    let idGen = uuidv4();
+    let idGen = await generateUuid();
     idGen = idGen.slice(0, -14);
     ////console.log(idGen);
     var data = {
@@ -1193,7 +1195,7 @@ exports.deployVultrServer = async (req, res) => {
   }
 
   try {
-    let idGen = uuidv4();
+    let idGen = await generateUuid();
     idGen = idGen.slice(0, -14);
     ////console.log(idGen);
     var dataString = {
