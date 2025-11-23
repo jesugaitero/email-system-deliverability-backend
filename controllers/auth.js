@@ -516,7 +516,7 @@ exports.login = async (req, res) => {
     return res.json(user);
   } catch (error) {
     console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -526,7 +526,7 @@ exports.logout = async (req, res) => {
     return res.json({ message: "Signout success" });
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -537,7 +537,7 @@ exports.currentUser = async (req, res) => {
     return res.json({ user: "jsmrno520@gmail.com" });
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -564,7 +564,7 @@ exports.createTemplate = async (req, res) => {
     return res.json({ ok: true });
   } catch (error) {
     console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -574,7 +574,7 @@ exports.getTemplates = async (req, res) => {
     return res.json(templates);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -584,7 +584,7 @@ exports.deleteTemplate = async (req, res) => {
     return res.json({ ok: true });
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -603,7 +603,7 @@ exports.updateTemplate = async (req, res) => {
     return res.json({ ok: true });
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -614,7 +614,7 @@ exports.getEmailSettings = async (req, res) => {
     return res.json(settings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -638,7 +638,7 @@ exports.updateEmailSettings = async (req, res) => {
     return res.status(200).json(emailUserSettings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -649,8 +649,8 @@ exports.getLinodeSettings = async (req, res) => {
     //// console.log(req.params.id);
     return res.json(settings);
   } catch (error) {
-    //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    console.log(error);
+    return res.status(400).send(error);
   }
 };
 
@@ -660,7 +660,7 @@ exports.getBitLaunchSettings = async (req, res) => {
     return res.json(settings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -670,7 +670,7 @@ exports.getVultrSettings = async (req, res) => {
     return res.json(settings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.getDigitalOceanSettings = async (req, res) => {
@@ -679,7 +679,7 @@ exports.getDigitalOceanSettings = async (req, res) => {
     return res.json(settings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -691,7 +691,7 @@ exports.getLinodeRegions = async (req, res) => {
     return res.status(200).send(regions.data);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -715,7 +715,7 @@ exports.getBitlaunchRegions = async (req, res) => {
     return res.status(200).send(response.data);
   } catch (error) {
     console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.getVultrRegions = async (req, res) => {
@@ -731,7 +731,7 @@ exports.getVultrRegions = async (req, res) => {
     return res.status(200).send(response.data);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.getDigitalOceanRegions = async (req, res) => {
@@ -750,7 +750,7 @@ exports.getDigitalOceanRegions = async (req, res) => {
     return res.status(200).send(response.data);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -762,7 +762,7 @@ exports.createLinodeServer = async (req, res) => {
     return res.json({ ok: true });
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -794,7 +794,7 @@ exports.getLinodeServers = async (req, res) => {
     return res.json(servers);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.getVultrServers = async (req, res) => {
@@ -824,7 +824,7 @@ exports.getVultrServers = async (req, res) => {
     return res.json(servers);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.getDigitalOceanServers = async (req, res) => {
@@ -854,7 +854,7 @@ exports.getDigitalOceanServers = async (req, res) => {
     return res.json(servers);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -889,7 +889,7 @@ exports.getBitLaunchServers = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -912,7 +912,7 @@ exports.getCustomServers = async (req, res) => {
     }
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -930,7 +930,7 @@ exports.updateLinodeSettings = async (req, res) => {
     return res.status(200).json(emailUserSettings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.updateDigitalOceanSettings = async (req, res) => {
@@ -948,7 +948,7 @@ exports.updateDigitalOceanSettings = async (req, res) => {
     return res.status(200).json(emailUserSettings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -967,7 +967,7 @@ exports.updateBitLaunchSettings = async (req, res) => {
     return res.status(200).json(emailUserSettings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -986,7 +986,7 @@ exports.updateVultrSettings = async (req, res) => {
     return res.status(200).json(emailUserSettings);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -1266,7 +1266,7 @@ exports.deleteLinodeServer = async (req, res) => {
     return res.status(401);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.deleteDigitalOceanServer = async (req, res) => {
@@ -1292,7 +1292,7 @@ exports.deleteDigitalOceanServer = async (req, res) => {
     return res.status(401);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -1319,7 +1319,7 @@ exports.deleteVultrServer = async (req, res) => {
     return res.status(401);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -1330,7 +1330,7 @@ exports.deleteCustomServer = async (req, res) => {
     return res.json({ ok: true });
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -1357,7 +1357,7 @@ exports.deleteBitlaunchServer = async (req, res) => {
     return res.status(401);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -1404,7 +1404,7 @@ exports.getTemplate = async (req, res) => {
     return res.json(template);
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -1653,7 +1653,7 @@ exports.sendEmail = async (req, res) => {
         })*/
   } catch (error) {
     console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -2254,7 +2254,7 @@ exports.updateAllDigitalOcean = async (req, res) => {
     }
   } catch (error) {
     //console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 
@@ -2295,7 +2295,7 @@ exports.updateAllLinodes = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.updateAllBitlaunch = async (req, res) => {
@@ -2333,7 +2333,7 @@ exports.updateAllBitlaunch = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    return res.status(400).send("Error. Try Again");
+    return res.status(400).send(error);
   }
 };
 exports.updateAllVultr = async (req, res) => {
@@ -2371,7 +2371,7 @@ exports.updateAllVultr = async (req, res) => {
     }
   } catch (error) {
     //// console.log(error);
-    return res.status(304).send("Error. Try Again");
+    return res.status(304).send(error);
   }
 };
 
@@ -2732,7 +2732,7 @@ exports.installPackages = async (req, res) => {
     })
     .catch((error) => {
       //console.log(error)
-      return res.status(400).send("Error. Try Again");
+      return res.status(400).send(error);
     });
   // } catch (error) {
   ////   console.log(error);
@@ -2790,7 +2790,7 @@ exports.createCustomServer = async (req, res) => {
     })
     .catch((error) => {
       //console.log(error)
-      return res.status(400).send("Error. Try Again");
+      return res.status(400).send(error);
     });
 };
 
@@ -3149,7 +3149,7 @@ exports.installPackagesBitlaunch = async (req, res) => {
     })
     .catch((error) => {
       //console.log(error)
-      return res.status(400).send("Error. Try Again");
+      return res.status(400).send(error);
     });
 };
 exports.installPackagesVultr = async (req, res) => {
@@ -3507,7 +3507,7 @@ exports.installPackagesVultr = async (req, res) => {
     })
     .catch((error) => {
       //console.log(error)
-      return res.status(400).send("Error. Try Again");
+      return res.status(400).send(error);
     });
 };
 exports.installPackagesDigitalOcean = async (req, res) => {
@@ -3865,7 +3865,7 @@ exports.installPackagesDigitalOcean = async (req, res) => {
     })
     .catch((error) => {
       //console.log(error)
-      return res.status(400).send("Error. Try Again");
+      return res.status(400).send(error);
     });
 };
 
@@ -4224,7 +4224,7 @@ exports.installPackagesCustom = async (req, res) => {
     })
     .catch((error) => {
       //console.log(error)
-      return res.status(400).send("Error. Try Again");
+      return res.status(400).send(error);
     });
 };
 
