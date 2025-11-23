@@ -17,7 +17,7 @@ const CustomServers = require("../models/CustomServers");
 const emailQueue = require("../models/EmailsQueue");
 const EmailSended = require("../models/emailsSended");
 //CONFIG PACKAGES
-const { v4: uuidv4 } = require("uuid");
+ import { v4 as uuidv4 } from 'uuid';
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const pug = require("pug");
