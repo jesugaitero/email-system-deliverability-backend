@@ -21,7 +21,7 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 //db
-mongoose.connect(process.env.DATABASE_LOCAL, {
+mongoose.connect(process.env.MONGODB_URI, {
 
 }).then(() => console.log('DB CONNECTED'))
   .catch((err) => console.log(err))
