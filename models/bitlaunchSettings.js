@@ -1,0 +1,20 @@
+const mongoose = require('mongoose')
+const { Schema } = require("mongoose");
+
+const bitLaunchSettingsSchema = new Schema({
+  key: {
+    type: String,
+    trim: true,
+  },
+  user: {
+    type: String,
+    trim: true,
+    required: true,
+  },
+},
+{timestamps: true}
+);
+
+
+const BitlauchSettings =  mongoose.model("BitlauchSettings", bitLaunchSettingsSchema);
+module.exports = BitlauchSettings;
